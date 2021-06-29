@@ -10,9 +10,11 @@ var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
 var world,boy, boy_img;
 
+
+
 //Declara aquí las variables launcherObject y launchForce
 var launcherObject
-var launcherObject = 100
+var launcherForce = 100
 function preload(){
 	boy_img=loadImage("images/boy.png");
   }
@@ -88,13 +90,26 @@ function draw() {
 }
 
 //crea aquí la función mouseDragged
+function mouseDragged(){
+  if(gameState != "launched")
+  Matter.Body.setPosition(bird.body,{x : mouseX,y : mouseY})
+}
 
 
 //crea aquí la función mouseReleased 
+function mouseReleased(){
+
+}
 
 
 //crea aquí la función keyPressed 
-
+function keyPressed(){
+  if(keyCode === 32){
+    Matter.Body.setPosition(bird.body,{x : 145,y : 110})
+    t_r.attach (bird.body);
+    gameState = "on_Sling"
+  }
+  }
 
   function detectollision(lstone,lmango){
 
@@ -106,5 +121,4 @@ function draw() {
     {
   	  Matter.Body.setStatic(lmango.body,false);
     }
-
   }
