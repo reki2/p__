@@ -8,13 +8,13 @@ const Constraint=Matter.Constraint;
 
 var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
-var world,boy;
+var world,boy, boy_img;
 
 //Declara aquí las variables launcherObject y launchForce
 var launcherObject
 var launcherObject = 100
 function preload(){
-	boy=loadImage("images/boy.png");
+	boy_img=loadImage("images/boy.png");
   }
 
 function setup() {
