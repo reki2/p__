@@ -70,7 +70,7 @@ function draw() {
   stoneObj.display();
   groundObject.display();
   // muestra el objeto lanzador aquí
-    
+  launcherObject.display()  
 
 
   detectollision(stoneObj,mango1);
